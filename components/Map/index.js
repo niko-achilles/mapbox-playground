@@ -88,7 +88,7 @@ const Map = () => {
         </ReactMapGL>
       </div>
       <div className="sidebar">
-        <Blog />
+        <Blog props={isDraftMarker} />
       </div>
       <style jsx>{`
         .container {
