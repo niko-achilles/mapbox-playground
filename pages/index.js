@@ -1,3 +1,11 @@
-export default function Home() {
-  return <div>Hello from Home Page</div>;
-}
+import Map from "../components/Map";
+
+const Home = () => {
+  return (
+    <div>
+      <Map />
+    </div>
+  );
+};
+
+export default Home;
