@@ -2,8 +2,6 @@ import ReactMapGL, { NavigationControl, Marker } from "react-map-gl";
 
 import React, { useState, useEffect } from "react";
 
-import { Icon } from "semantic-ui-react";
-
 import Blog from "../Blog";
 
 const INITIAL_VIEWPORT = {
@@ -46,10 +44,10 @@ const Map = () => {
   }
 
   return (
-    <>
+    <div className="container">
       <div className="map">
         <ReactMapGL
-          mapboxApiAccessToken="<your map box token>"
+          mapboxApiAccessToken="pk.eyJ1Ijoibmlrb2xhb3MtYWNoaWxsZXMiLCJhIjoiY2tocWkwcXZiMTZzNDJ2azZzOXVwcDh6MyJ9.ZM6iDnibLvpgIgTAJ5nE-A"
           mapStyle="mapbox://styles/mapbox/streets-v11"
           {...viewport}
           width="100%"
@@ -70,7 +68,9 @@ const Map = () => {
               offsetLeft={-19}
               offsetTop={-37}
             >
-              <Icon name="map marker alternate" color="blue" size="huge" />
+              <span className="user-position-marker">
+                <i className="fas fa-map-marker-alt" />
+              </span>
             </Marker>
           )}
           {isDraftMarker.state && (
@@ -80,7 +80,9 @@ const Map = () => {
               offsetLeft={-19}
               offsetTop={-37}
             >
-              <Icon name="map marker alternate" color="pink" size="huge" />
+              <span className="draft-marker">
+                <i className="fas fa-map-marker-alt" />
+              </span>
             </Marker>
           )}
         </ReactMapGL>
@@ -89,19 +91,18 @@ const Map = () => {
         <Blog />
       </div>
       <style jsx>{`
+        .container {
+          display: flex;
+          flex-direction: row;
+        }
         .map {
+          flex: 3 0 70%;
           border-right: 1px solid black;
-          width: 66.6666%;
         }
 
         .sidebar {
-          width: 33.3333%;
-          position: absolute;
-          right: 0;
-          top: 0;
-          bottom: 0;
-          padding: 20px;
-          font-size: 2em;
+          flex: 1 0 30%;
+          align-self: center;
         }
 
         .navigation-control {
@@ -110,8 +111,18 @@ const Map = () => {
           left: 0;
           margin: 1em;
         }
+
+        .user-position-marker {
+          color: blue;
+          font-size: 3rem;
+        }
+
+        .draft-marker {
+          color: tomato;
+          font-size: 3rem;
+        }
       `}</style>
-    </>
+    </div>
   );
 };
 

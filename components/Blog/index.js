@@ -1,5 +1,18 @@
 const Blog = ({ longitude, latitude }) => {
-  return <p>User content , e.g. blog with text, photos , video </p>;
+  return (
+    <div>
+      <h3>Content</h3>
+      <p>content of user</p>
+      <style jsx>
+        {`
+          div {
+            padding: 4em;
+            text-align: center;
+          }
+        `}
+      </style>
+    </div>
+  );
 };
 
 export default Blog;
