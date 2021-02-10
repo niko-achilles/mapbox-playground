@@ -58,7 +58,7 @@ const Map = () => {
       <ReactMapGL
         height="100%"
         width="100%"
-        mapboxApiAccessToken="pk.eyJ1Ijoibmlrb2xhb3MtYWNoaWxsZXMiLCJhIjoiY2tocWkwcXZiMTZzNDJ2azZzOXVwcDh6MyJ9.ZM6iDnibLvpgIgTAJ5nE-A"
+        mapboxApiAccessToken="<YOUR MAPBOX API KEY>"
         mapStyle="mapbox://styles/mapbox/streets-v11"
         onViewportChange={(newViewport) => setViewport(newViewport)}
         onClick={handleMapClick}
